@@ -1,5 +1,3 @@
-// @ts-nocheck
-
 import { resolve } from 'node:path'
 
 import react from '@vitejs/plugin-react'
@@ -19,12 +17,12 @@ export default defineConfig((configEnv) => ({
       linters: [new EsLinter({ configEnv })],
     }),
     dts({
-      include: ['src/component/'],
+      include: ['src/components/'],
     }),
   ],
   build: {
     lib: {
-      entry: resolve('src', 'component/index.ts'),
+      entry: resolve('src', 'components/index.ts'),
       name: 'JSXControlComponents',
       formats: ['es', 'umd'],
       fileName: (format) => `jsx-control-components.${format}.js`,
